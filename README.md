@@ -1,4 +1,3 @@
-# fraud-detection-ml
 # 🛡️ Credit Card Fraud Detection
 
 A machine learning pipeline to detect fraudulent credit card transactions using XGBoost. The project includes data preprocessing, model training, and real-time inference API served with FastAPI and Docker.
@@ -23,11 +22,17 @@ Credit card fraud detection is a binary classification problem with a highly imb
 
 fraud-detection-ml/
 ├── README.md
+
 ├── requirements.txt
+
 ├── Dockerfile
+
 ├── data/
+
 ├── notebooks/
+
 ├── src/
+
 ├── app/
 
 - `notebooks/`: Exploratory data analysis and model prototyping
