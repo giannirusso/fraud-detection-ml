@@ -62,3 +62,29 @@ fraud-detection-ml/
 ### 1. Build Docker image
 ```bash
 docker build -t fraud-api .
+```
+### 2. Run container
+```bash
+docker run -p 8000:8000 fraud-api
+```
+### 3. Open docs
+Visit http://localhost:8000/docs to test the API with Swagger UI.
+
+
+## 🧪 API Example
+POST /predict
+```json
+{
+  "V1": -1.23,
+  "V2": 0.45,
+  "V3": 2.51,
+  "V4": -0.77,
+  "Amount": 125.50
+}
+```
+Response:
+```json
+{
+  "fraud": true
+}
+```
