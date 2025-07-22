@@ -21,6 +21,7 @@ Credit card fraud detection is a binary classification problem with a highly imb
 ## 🧱 Project Structure
 
 fraud-detection-ml/
+
 ├── README.md
 
 ├── requirements.txt
