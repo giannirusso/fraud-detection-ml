@@ -1,3 +1,9 @@
+[![Python](https://img.shields.io/badge/Python-3.9-blue.svg)]()
+[![Docker](https://img.shields.io/badge/Docker-Ready-success)]()
+[![FastAPI](https://img.shields.io/badge/API-FastAPI-green)]()
+[![Status](https://img.shields.io/badge/Model-Production--Ready-brightgreen)]()
+
+
 # 🛡️ Credit Card Fraud Detection
 
 A machine learning pipeline to detect fraudulent credit card transactions using XGBoost. The project includes data preprocessing, model training, and real-time inference API served with FastAPI and Docker.
