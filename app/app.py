@@ -7,6 +7,10 @@ model = joblib.load("app/model.pkl")
 
 app = FastAPI()
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 class Transaction(BaseModel):
     V1: float
     V2: float
