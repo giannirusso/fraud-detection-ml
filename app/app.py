@@ -1,11 +1,13 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from prometheus_fastapi_instrumentator import Instrumentator
 import joblib
 import numpy as np
 
 model = joblib.load("app/model.pkl")
 
 app = FastAPI()
+Instrumentator().instrument(app).expose(app, endpoint="/metrics")
 
 @app.get("/health")
 def health():
