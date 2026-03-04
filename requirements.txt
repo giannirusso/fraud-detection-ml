@@ -6,3 +6,4 @@ imbalanced-learn
 fastapi
 uvicorn
 joblib
+prometheus-fastapi-instrumentator
