@@ -5,15 +5,14 @@ services:
     ports:
       - "8000:8000"
 
-  prometheus:
-    image: prom/prometheus:v2.50.1
-    container_name: prometheus
-    ports:
-      - "9090:9090"
-    volumes:
-      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
-    depends_on:
-      - fraud-api
+prometheus:
+  image: prom/prometheus:v2.50.1
+  ports:
+    - "9090:9090"
+  volumes:
+    - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+  depends_on:
+    - fraud-api
 
   grafana:
     image: grafana/grafana:10.3.3
