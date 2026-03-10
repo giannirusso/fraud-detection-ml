@@ -31,9 +31,13 @@ def predict(data: FraudInput):
 
     pred = model.predict(input_df)[0]
 
-    if hasattr(model, "predict_proba"):
-        prob = float(model.predict_proba(input_df)[0][1])
-    else:
+    prob = None
+    try:
+        if hasattr(model, "predict_proba"):
+            proba = model.predict_proba(input_df)
+            if proba is not None and len(proba[0]) > 1:
+                prob = float(proba[0][1])
+    except Exception:
         prob = None
 
     return {
