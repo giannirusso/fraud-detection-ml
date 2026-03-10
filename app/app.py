@@ -7,18 +7,23 @@ import numpy as np
 model = joblib.load("app/model.pkl")
 
 app = FastAPI()
-Instrumentator().instrument(app).expose(app, endpoint="/metrics")
 
-@app.get("/health")
-def health():
-    return {"status": "ok"}
+model = joblib.load("app/model.pkl")
+MODEL_VERSION = "1.0.0"
 
-class Transaction(BaseModel):
+
+class FraudInput(BaseModel):
     V1: float
     V2: float
     V3: float
     V4: float
     Amount: float
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 
 @app.post("/predict")
 def predict(data: FraudInput):
