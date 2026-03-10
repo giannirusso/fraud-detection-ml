@@ -21,7 +21,18 @@ class Transaction(BaseModel):
     Amount: float
 
 @app.post("/predict")
-def predict(tx: Transaction):
-    X = np.array([[tx.V1, tx.V2, tx.V3, tx.V4, tx.Amount]])
-    prediction = model.predict(X)
-    return {"fraud": bool(prediction[0])}
+def predict(data: FraudInput):
+    input_df = pd.DataFrame([data.dict()])
+
+    pred = model.predict(input_df)[0]
+
+    if hasattr(model, "predict_proba"):
+        prob = float(model.predict_proba(input_df)[0][1])
+    else:
+        prob = None
+
+    return {
+        "fraud": bool(pred),
+        "fraud_probability": prob,
+        "model_version": MODEL_VERSION
+    }
