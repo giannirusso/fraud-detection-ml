@@ -12,7 +12,7 @@ A machine learning pipeline to detect fraudulent credit card transactions using 
 
 ## 📌 Problem Statement
 
-Credit card fraud detection is a binary classification problem with a highly imbalanced dataset. The goal is to detect fraudulent transactions while minimizing false positives.
+Production-style fraud detection system using XGBoost, FastAPI, Docker, and imbalanced learning techniques.
 
 ---
 
